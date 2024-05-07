@@ -36,7 +36,7 @@
             this.textBoxmolaS = new System.Windows.Forms.TextBox();
             this.textBoxmolaM = new System.Windows.Forms.TextBox();
             this.textBoxmolaH = new System.Windows.Forms.TextBox();
-            this.buttonreset = new System.Windows.Forms.Button();
+            this.buttononay = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.textBoxodakM.Name = "textBoxodakM";
             this.textBoxodakM.Size = new System.Drawing.Size(40, 20);
             this.textBoxodakM.TabIndex = 5;
-            this.textBoxodakM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            this.textBoxodakM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberDetect);
             // 
             // textBoxodakS
             // 
@@ -89,7 +89,7 @@
             this.textBoxodakS.Name = "textBoxodakS";
             this.textBoxodakS.Size = new System.Drawing.Size(40, 20);
             this.textBoxodakS.TabIndex = 6;
-            this.textBoxodakS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            this.textBoxodakS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberDetect);
             // 
             // textBoxmolaS
             // 
@@ -98,7 +98,7 @@
             this.textBoxmolaS.Name = "textBoxmolaS";
             this.textBoxmolaS.Size = new System.Drawing.Size(40, 20);
             this.textBoxmolaS.TabIndex = 9;
-            this.textBoxmolaS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            this.textBoxmolaS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberDetect);
             // 
             // textBoxmolaM
             // 
@@ -107,7 +107,7 @@
             this.textBoxmolaM.Name = "textBoxmolaM";
             this.textBoxmolaM.Size = new System.Drawing.Size(40, 20);
             this.textBoxmolaM.TabIndex = 8;
-            this.textBoxmolaM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            this.textBoxmolaM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberDetect);
             // 
             // textBoxmolaH
             // 
@@ -118,18 +118,19 @@
             this.textBoxmolaH.TabIndex = 7;
             this.textBoxmolaH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
             // 
-            // buttonreset
+            // buttononay
             // 
-            this.buttonreset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(130)))), ((int)(((byte)(196)))));
-            this.buttonreset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonreset.ForeColor = System.Drawing.Color.White;
-            this.buttonreset.Location = new System.Drawing.Point(136, 160);
-            this.buttonreset.Name = "buttonreset";
-            this.buttonreset.Size = new System.Drawing.Size(150, 50);
-            this.buttonreset.TabIndex = 10;
-            this.buttonreset.Text = "Sıfırla";
-            this.buttonreset.UseVisualStyleBackColor = false;
+            this.buttononay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(130)))), ((int)(((byte)(196)))));
+            this.buttononay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttononay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttononay.ForeColor = System.Drawing.Color.White;
+            this.buttononay.Location = new System.Drawing.Point(119, 164);
+            this.buttononay.Name = "buttononay";
+            this.buttononay.Size = new System.Drawing.Size(161, 50);
+            this.buttononay.TabIndex = 10;
+            this.buttononay.Text = "Odaklanmaya Başla";
+            this.buttononay.UseVisualStyleBackColor = false;
+            this.buttononay.Click += new System.EventHandler(this.buttononay_Click);
             // 
             // label3
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonreset);
+            this.Controls.Add(this.buttononay);
             this.Controls.Add(this.textBoxmolaS);
             this.Controls.Add(this.textBoxmolaM);
             this.Controls.Add(this.textBoxmolaH);
@@ -183,6 +184,7 @@
             this.Controls.Add(this.textBoxodakH);
             this.Controls.Add(this.label1);
             this.Name = "Odaklanma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odaklanma";
             this.Load += new System.EventHandler(this.Odaklanma_Load);
             this.ResumeLayout(false);
@@ -193,16 +195,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxodakH;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxodakM;
-        private System.Windows.Forms.TextBox textBoxodakS;
-        private System.Windows.Forms.TextBox textBoxmolaS;
-        private System.Windows.Forms.TextBox textBoxmolaM;
-        private System.Windows.Forms.TextBox textBoxmolaH;
-        private System.Windows.Forms.Button buttonreset;
+        private System.Windows.Forms.Button buttononay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox textBoxodakH;
+        public System.Windows.Forms.TextBox textBoxodakM;
+        public System.Windows.Forms.TextBox textBoxodakS;
+        public System.Windows.Forms.TextBox textBoxmolaS;
+        public System.Windows.Forms.TextBox textBoxmolaM;
+        public System.Windows.Forms.TextBox textBoxmolaH;
     }
 }

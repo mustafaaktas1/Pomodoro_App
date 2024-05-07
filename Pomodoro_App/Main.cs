@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using CommunityToolkit.WinUI.Notifications;
+using CommunityToolkit.WinUI.Notifications.Internal;
+
+
 
 namespace Pomodoro_App
 {
@@ -15,8 +19,8 @@ namespace Pomodoro_App
     {
         System.Timers.Timer timer;
         int h, m, s;
-        
-       
+
+        NotifyIcon notify_Icon = new NotifyIcon();
 
         public Main ()
         {
@@ -56,7 +60,6 @@ namespace Pomodoro_App
         {
             timer.Start();
         }
-
         private void OnTimeEvent (object sender, ElapsedEventArgs e)
         {
             Invoke(new Action(() =>

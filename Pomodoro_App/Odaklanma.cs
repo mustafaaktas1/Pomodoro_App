@@ -12,7 +12,8 @@ namespace Pomodoro_App
 {
     public partial class Odaklanma : Form
     {
-        int number;
+        int h, m, s = 0;
+
         public Odaklanma ()
         {
             InitializeComponent();
@@ -23,8 +24,19 @@ namespace Pomodoro_App
 
         }
 
+        private void buttononay_Click (object sender, EventArgs e)
+        {
+
+        }
 
         void NumberOnly (object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+        void NumberDetect (object sender, KeyPressEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
@@ -53,6 +65,6 @@ namespace Pomodoro_App
             }
         }
 
-       
+
     }
 }
